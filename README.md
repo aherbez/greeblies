@@ -2,6 +2,7 @@
 This is a web-based, parametric modeler for making 3d-printable panels worth of tech ["greeblies/nurnies"](https://en.wikipedia.org/wiki/Greeble).
 
 Click on this image to see a video of the system in action
+
 [![link to demo video](https://img.youtube.com/vi/WRCzxcN5BWo/0.jpg)](https://www.youtube.com/watch?v=WRCzxcN5BWo)
 
 The system starts out with a basic shape, and allows the user to click-and-drag to define rectangular regions that are then replaced with a new feature. So far, the supported features are:
