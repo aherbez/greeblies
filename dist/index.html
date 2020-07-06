@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Greeblie Modeler</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family:Arial, Helvetica, sans-serif;
+            overflow: hidden;
+            color: #fff;
+        }
+        canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: block;
+        }
+
+        #root {
+          position: absolute;
+          top: 0px;
+          left: 300px;
+        }
+
+        #controls {
+          position: absolute;
+          top: 0px;
+          left: 100%;
+          margin-left: -300px;
+          width: 300px;
+          height: 100%;
+          background: #444;
+          z-index: 1000;
+          border-left: 3px solid #000;
+        }
+
+        label {
+          color: #FFF;
+          position: absolute;
+          float: right;
+          width: 150px;
+          border-bottom: 1px solid #000;
+        }
+
+        .param {
+          position: relative;
+          left: 150px;
+          width: 140px;
+          margin: 0px;
+        }
+
+        .param-div {
+          height: 20px;
+          padding: 5px;
+        }
+
+        #feature-desc {
+          min-height: 40px;
+          color: #fff;
+          padding: 5px;
+          border-bottom: 1px solid #000;
+        }
+
+        #desc {
+          padding: 5px;
+        }
+
+        #desc h2 {
+          margin-top: 0px;
+        }
+    </style>
+
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <div id="controls">
+      <!-- <input value="DOWNLOAD STL" type="button" /> <br /> -->
+
+      
+      <label>Feature Type:</label>
+      <select id="param-feature" onchange="this.blur();" class="param">
+      </select>
+      <div id="feature-desc"></div>
+
+      <div id="param-list">
+        <label>Extrude Amt:</label>
+        <input type="text" id="param-extrude" value="1" class="param"/> <br />
+        <label>Bevel Amt:</label>
+        <input type="text" id="param-bevel" value="0.4" class="param" /> <br />
+      </div>
+
+      <div id="desc">
+        <h2>Greeblies! (v0.8)</h2>
+
+        <p>
+          This is a web-based parametric modeler for creating 3d-printable panels of tech equipment.
+        </p>
+        <p>
+          Click and drag with the mouse to change the camera angle. Use the scroll wheel to zoom in and out.
+        </p>
+
+        <p>Hold space and click-and-drag on an existing face to add a new feature. See above for the list of features, and for the parameters for each.</p>
+
+      </div>
+
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
