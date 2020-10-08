@@ -14,7 +14,7 @@ The system starts out with a basic shape, and allows the user to click-and-drag 
 
 All of the above have various parametric attributes, and all of the geometry is generated on the fly without any model imports. The resulting mesh is also water-tight and appropriate for 3d printing.
 
-It doesn't yet actually export the geometry to STL, but that's coming soon.
+Now with STL export support!
 
 See the current version in action for yourself at [http://adrianherbez.net/greebles/08/](http://adrianherbez.net/greebles/08/)
 
