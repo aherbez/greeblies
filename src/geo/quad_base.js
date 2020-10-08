@@ -27,7 +27,7 @@ export class QuadBase {
             Math.max(0.4, Math.random())
         );
 
-        col = new THREE.Color(0.6, 0.6, 0.6);
+        // col = new THREE.Color(0.6, 0.6, 0.6);
 
         this.mat = new THREE.MeshLambertMaterial({
             color: col,

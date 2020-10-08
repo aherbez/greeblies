@@ -1,11 +1,14 @@
 import * as THREE from 'three';
 import oc from 'three-orbit-controls';
+import { STLExporter } from './libs/STLExporter';
 
 import { QuadBox } from './geo/quad_box';
 import { QuadBase } from './geo/quad_base';
 import { SelectionQuad } from './geo/selection_quad';
 
 const OrbitControls = oc(THREE);
+
+const exporter = new STLExporter();
 
 const MODE_NONE = 0;
 const MODE_ORBIT = 1;
@@ -39,11 +42,9 @@ export class GreebleModeler {
 
         this.init();
 
-        // this.addSkybox();
-
         this.addLights();
         
-        this.addTempGeo();
+        this.addStartGeo();
 
         this.dragging = false;
 
@@ -203,10 +204,10 @@ export class GreebleModeler {
         }
     }
 
-    addTempGeo() {
+    addStartGeo() {
         let box = new QuadBox(this, {
-            width: 20,
-            height: 20,
+            width: 40,
+            height: 40,
             depth: 10
         });
     }
@@ -253,4 +254,9 @@ export class GreebleModeler {
 
         requestAnimationFrame(this.render.bind(this));
     }
+
+    getSTLData() {
+        return exporter.parse(this.scene);
+    }
+
 }

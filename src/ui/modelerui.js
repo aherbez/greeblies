@@ -5,6 +5,8 @@ export class ModelerUI {
     constructor(baseDiv, modeler) {    
         this.uiRoot = baseDiv;
         this.modeler = modeler;
+        this.exportButton = document.getElementById('export-stl');
+        this.exportButton.onclick = this.exportModel.bind(this);
 
         this.featureSelect = document.getElementById('param-feature');
         this.featureSelect.onchange = (evt) => {
@@ -18,7 +20,16 @@ export class ModelerUI {
         this.paramsRoot = document.getElementById('param-list');
 
         this.setFeatureType(0);
+
+        this.makeDownloadLink();
+
         console.log('SETUP UI');
+    }
+
+    makeDownloadLink() {
+        this.downloadLink = document.createElement('a');
+        this.downloadLink.style.display = "none";
+        document.body.appendChild(this.downloadLink);
     }
 
     initSelection() {
@@ -60,5 +71,22 @@ export class ModelerUI {
 
             this.paramsRoot.appendChild(pDiv);
         });
+    }
+
+    exportModel() {
+        let modelData = this.modeler.getSTLData();
+        this.saveString(modelData, 'panel.stl');
+    }
+
+    saveString(text, filename)
+    {
+        this.save(new Blob([text], {type: 'text/plain'}), filename);
+    }
+    
+    save(blob, filename)
+    {
+        this.downloadLink.href = URL.createObjectURL(blob);
+        this.downloadLink.download = filename;
+        this.downloadLink.click();
     }
 }
