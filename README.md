@@ -16,5 +16,5 @@ All of the above have various parametric attributes, and all of the geometry is 
 
 Now with STL export support!
 
-See the current version in action for yourself at [http://adrianherbez.net/greebles/08/](http://adrianherbez.net/greebles/08/)
+See the current version in action for yourself at [http://www.zanzastoys.com/tools/techpanels/](http://www.zanzastoys.com/tools/techpanels/)
 
