@@ -20,7 +20,7 @@
     "file-saver": "^2.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "three": "^0.117.1",
+    "three": "^0.137.0",
     "three-stlexporter": "^1.0.0",
     "threejs-export-stl": "0.0.4"
   }
